@@ -4,8 +4,8 @@
 用 PyTorch 重写《深度学习入门：基于 Python 的理论与实现》(鱼书) 的代码。
 
 ## 环境
-- conda 环境：d2l
-- Python 3.x / PyTorch x.x
+- PyTorch: 2.5.1+cu121
+- NumPy: 1.26.4
 
 ## 进度
 - [ ] 第1章 Python 基础
