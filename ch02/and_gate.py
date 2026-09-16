@@ -3,7 +3,7 @@ import numpy as np
 def AND(x1, x2):
     """
     :variate x: 输入x
-    :variate w: 权重
+    :variate w: 权重  (控制各个信号的重要性)
     :variate b： 偏置 (调整神经元被激活的容易程度)
     :variate temp = x1*w1 + x2*w2 + b
 
