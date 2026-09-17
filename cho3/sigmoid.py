@@ -3,7 +3,7 @@ from matplotlib import pyplot as plt
 
 """
     激活函数：
-        目的：将输入信号的纵和转换为输出信号
+        目的：将输入信号的总和转换为输出信号
             e.g.   输入信号：a = w1x1 + w2x2 + b
                    激活函数：h()
                    输出：y = h(a)
