@@ -32,6 +32,8 @@ def init_network():
     with open("sample_weight.pkl", 'rb') as f:
         network = pickle.load(f)
     return network
+
+
 """
     以numpy数组的形式输出各个标签对应的概率
 """
@@ -39,17 +41,18 @@ def predict(network, x):
     W1, W2, W3 = network['W1'], network['W2'], network['W3']
     b1, b2, b3= network['b1'], network['b2'], network['b3']
 
+    """
+       a1、a2为隐藏层，a1有50个神经元，a2有100个神经元（50和100可设置为任意值）
+       Z1、Z2为对应层的激活函数
+    """
     a1 = np.dot(x, W1) + b1
     z1 = sigmoid(a1) #(50,)
     a2 = np.dot(z1, W2) + b2
     z2 = sigmoid(a2) #(100,)
 
-    """
-         Z1、Z2为隐藏层，Z1有50个神经元，Z2有100个神经元（50和100可设置为任意值）
-    """
     a3 = np.dot(z2, W3) + b3
 
-
+    """由于是分类问题，故输出层用softmax函数（可省略）"""
     y = softmax(a3)
 
     return y
@@ -65,7 +68,7 @@ accuracy_cnt = 0
     predict()函数以NumPy数组的形式输出各个标签对应的概率。
 """
 for i in range(len(x)):
-    y = predict(network, x[i])
+    y = predict(network, x[i]) #用参数进行预测
     p = np.argmax(y) #取出数组中的最大值的索引（第几个元素的概率最高）
     if p == t[i]:
         accuracy_cnt += 1

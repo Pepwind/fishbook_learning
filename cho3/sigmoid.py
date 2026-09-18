@@ -2,6 +2,7 @@ import numpy as np
 from matplotlib import pyplot as plt
 
 """
+    一般为隐藏层的激活函数   
     激活函数：
         目的：将输入信号的总和转换为输出信号
             e.g.   输入信号：a = w1x1 + w2x2 + b

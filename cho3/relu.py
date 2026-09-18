@@ -1,6 +1,10 @@
 import numpy as np
 from matplotlib import pyplot as plt
 
+"""
+    神经网络中的激活函数使用平滑变化的sigmoid函数或ReLU函数。
+"""
+
 def relu(x):
     return np.maximum(0, x)
 
